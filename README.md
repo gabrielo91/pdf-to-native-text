@@ -26,4 +26,4 @@ Finally, in order to run it:
 python main.py
 ```
 
-The input pdf must be named `sample.pdf` and the output will be stored as `output.pdf`
+The input pdf must be named `sample.pdf` and the output will be stored as `output.pdf` and `output.txt`
