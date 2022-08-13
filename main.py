@@ -1,16 +1,17 @@
-from PyPDF2 import PdfReader
-import fitz
 import ocrmypdf
+import datetime
+from PyPDF2 import PdfReader
+
 
 def main():
   try:
-
-    ocrmypdf.ocr('sample.pdf', 'output.pdf', deskew=True)
-    reader = PdfReader("output.pdf")
+    output_file_name = f'{datetime.datetime.now()}'
+    ocrmypdf.ocr('sample.pdf', f'output/{output_file_name}.pdf', deskew=True)
+    reader = PdfReader(f'output/{output_file_name}.pdf')
     page = reader.pages[0]
     text = page.extract_text()
 
-    with open('output.txt', 'w') as f:
+    with open(f'output/{output_file_name}.txt', 'w') as f:
       f.write(text)
   
   except Exception as e:
