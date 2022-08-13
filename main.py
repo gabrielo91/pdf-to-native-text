@@ -1,8 +1,6 @@
 import ocrmypdf
 import os
 
-from PyPDF2 import PdfReader
-
 ocrmypdf.configure_logging(verbosity= 2)
 
 
